@@ -59,5 +59,5 @@ plot(chm, main = 'Canopy Height Model')
 
 # Mapping trees
 treetops <- locate_trees(chm, lmf(ws = 6, hmin = 10)) 
-plot(chm) 
+plot(chm)
 plot(treetops$geometry, add = TRUE, pch = 16, cex = 0.2)
