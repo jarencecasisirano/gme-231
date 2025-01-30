@@ -12,9 +12,9 @@ library(terra)
 library(RCSF)
 
 # Load example dataset 
-las = readLAS('data/NEON_D03_JERC_DP1_740000_3459000_classified_point_cloud.laz') 
+las = readLAS('data/NEON_D03_JERC_DP1_740000_3459000_classified_point_cloud.laz')
 # or if your computer power is low, use the reduced dataset instead 
-# las = readLAS('NEON_D03_JERC_DP1_740000_3459000_classified_point_cloud-reduced.laz') 
+# las = readLAS('data/NEON_D03_JERC_DP1_740000_3459000_classified_point_cloud-reduced.laz')
 
 # plot using native RGL viewer. Note this may take a few seconds 
 plot(las)
@@ -26,7 +26,8 @@ plot(las)
 # Take a look at the highest point, and filter out data below it 
 max(las$Z)  
 # Keep only points below it the highest point. 
-las = filter_poi(las, Z < 970) 
+las = filter_poi(las, Z < 970)
+max(las$Z)
 plot(las) 
 
 # Plotting LIDAR
